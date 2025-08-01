@@ -96,12 +96,6 @@ Camera credentials are saved in a local file: `camera_config.json`.
 
 ---
 
-## 📄 License
-
-MIT License *(or specify your own)*
-
----
-
 ## 🙋‍♂️ Author
 
 Created with 💻 by Prasad  
