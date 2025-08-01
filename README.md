@@ -18,9 +18,11 @@
 
 ## 🖼️ Screenshots
 
-| Camera Configuration Panel | Four-Camera Grid View | Single Camera Live Stream |
-|----------------------------|------------------------|----------------------------|
-| ![Camera Config](config_camera.png) | ![All Cameras](all_cameras.png) | ![Camera 1 View](camera1.png) |
+| Description                     | Preview                           |
+|---------------------------------|------------------------------------|
+| 🔒 Camera Configuration Panel   | ![Camera Config](config_camera.png) |
+| 📺 Four-Camera Grid View        | ![All Cameras](all_cameras.png)    |
+| 🔁 Single Camera Live Stream    | ![Camera 1 View](camera1.png)      |
 
 
 ## 🖼️ Screenshots
