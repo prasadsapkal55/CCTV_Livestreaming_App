@@ -16,6 +16,30 @@
 
 ---
 
+<table>
+  <thead>
+    <tr>
+      <th style="width: 30%;">Description</th>
+      <th style="width: 70%;">Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🔒 Camera Configuration Panel</td>
+      <td><img src="config_camera.png" width="400"></td>
+    </tr>
+    <tr>
+      <td>📺 Four-Camera Grid View</td>
+      <td><img src="all_cameras.png" width="400"></td>
+    </tr>
+    <tr>
+      <td>🔁 Single Camera Live Stream</td>
+      <td><img src="camera1.png" width="400"></td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## 🖼️ Screenshots
 
 <div align="center">
