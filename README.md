@@ -1,6 +1,6 @@
 # 📹 CCTV Livestreaming App
 
-**CCTV Livestreaming App** is a desktop application built with Python and Tkinter that allows users to **view live RTSP streams** from up to four IP cameras. It provides a user-friendly interface, configuration window and support for both single and multi-camera viewing.
+**CCTV Live Viewer** is a desktop application built with Python and Tkinter that allows users to **view live RTSP streams** from up to four IP cameras. It provides a user-friendly interface, configuration window and support for both single and multi-camera viewing.
 
 ---
 
