@@ -19,7 +19,7 @@
 ## 🖼️ Screenshots
 
 ### 🔒 Camera Configuration Panel
-![Camera Config](camera_config.png)
+![Camera Config](config_camera.png)
 
 ### 📺 Four-Camera Grid View
 ![All Cameras](all_cameras.png)
