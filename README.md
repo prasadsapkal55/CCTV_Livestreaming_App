@@ -18,6 +18,36 @@
 
 ## 🖼️ Screenshots
 
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🔒 Camera Configuration Panel</td>
+      <td><img src="config_camera.png" width="300"></td>
+    </tr>
+    <tr>
+      <td>📺 Four-Camera Grid View</td>
+      <td><img src="all_cameras.png" width="300"></td>
+    </tr>
+    <tr>
+      <td>🔁 Single Camera Live Stream</td>
+      <td><img src="camera1.png" width="300"></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+## 🖼️ Screenshots
+
 | Description                     | Preview                           |
 |---------------------------------|------------------------------------|
 | 🔒 Camera Configuration Panel   | ![Camera Config](config_camera.png) |
