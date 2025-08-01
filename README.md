@@ -19,13 +19,13 @@
 ## 🖼️ Screenshots
 
 ### 🔒 Camera Configuration Panel
-![Camera Config](./Screenshot%20(46).png)
+![Camera Config](./Camera Config.png)
 
 ### 📺 Four-Camera Grid View
-![All Cameras](./Screenshot%20(49).png)
+![All Cameras](./All Cameras.png)
 
 ### 🔁 Single Camera Live Stream
-![Camera 1 View](./Screenshot%202025-07-31%20172617.png)
+![Camera 1 View](./Camera1.png)
 
 ---
 
