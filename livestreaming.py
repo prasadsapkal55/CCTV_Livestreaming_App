@@ -4,7 +4,6 @@ from PIL import Image, ImageTk
 import cv2
 import json, os, sys, socket
 
-# Unique port for your app (must not conflict with real services)
 PORT = 65432
 LOCK_SOCKET = None
 
@@ -15,7 +14,7 @@ def check_single_instance():
         LOCK_SOCKET.bind(('127.0.0.1', PORT))
     except socket.error:
         root = tk.Tk()
-        root.withdraw()  # Hide the main window
+        root.withdraw()  
         messagebox.showwarning("Already Running", "This application is already running.")
         sys.exit()
 
@@ -26,7 +25,6 @@ else:
 
 CONFIG_FILE = os.path.join(BASE_DIR, "camera_config.json")
 
-# Initial default camera URLs (will update from config input)
 CAMERA_URLS = {
     "Camera 1": "",
     "Camera 2": "",
@@ -53,14 +51,13 @@ class CCTVApp:
         self.root.title("🚨 CCTV Live Viewer")
         self.root.configure(bg="white")
         self.root.geometry("1200x700")
-        #tk.Label(root, bg="white", height=1).pack()
         self.after_id = None
         self.load_camera_config()
         self.grid_caps = {}
         self.grid_threads = {}
         self.grid_labels = {}
         self.grid_frames = {}
-        self.camera_buttons = {}  # Track each camera button
+        self.camera_buttons = {}  
         self.selected_camera = None
 
         # Top bar with camera buttons and config
@@ -165,9 +162,8 @@ class CCTVApp:
             user_var = tk.StringVar()
             pass_var = tk.StringVar()
 
-            real_password = ""  # this holds the actual password
+            real_password = ""  
 
-            # Set saved values if available
             saved_url = CAMERA_URLS.get(cam, "")
             if saved_url.startswith("rtsp://") and "@" in saved_url:
                 try:
@@ -176,7 +172,6 @@ class CCTVApp:
                     ip = address.split(":")[0]
                     ip_var.set(ip)
                     user_var.set(user)
-                    # (Don't set pass_var — keep it blank for security)
                     real_password = pwd
                     masked_pwd = "*" * len(pwd)
                     pass_var.set(masked_pwd)
@@ -203,7 +198,7 @@ class CCTVApp:
                 "ip": ip_var,
                 "user": user_var,
                 "pass": pass_var,
-                "real_pass": real_password  # 🔒 secret stored separately
+                "real_pass": real_password  
             }
 
         # Submit button
@@ -212,7 +207,6 @@ class CCTVApp:
         self.config_widgets.append(submit_btn)
 
     def apply_config(self, window):
-        # Clear current entries before updating (optional but safe)
         for cam in list(CAMERA_URLS):
             if cam not in self.cam_inputs:
                 continue
@@ -227,7 +221,7 @@ class CCTVApp:
                 if cam in CAMERA_URLS:
                     del CAMERA_URLS[cam]
 
-        # ✅ Save to JSON file ONCE
+        # Save to JSON file ONCE
         try:
             with open(CONFIG_FILE, "w") as f:
                 json.dump(CAMERA_URLS, f, indent=4)
@@ -240,7 +234,7 @@ class CCTVApp:
 
 
     def start_stream(self, name):
-        self.stop_stream()  # stop previous loop & release cap
+        self.stop_stream()  
         self.current_camera = name
 
         url = CAMERA_URLS.get(name, "").strip()
@@ -259,13 +253,12 @@ class CCTVApp:
         self.update_frame()
 
     def show_all_cameras(self):
-        self.stop_stream()  # Stop single view
+        self.stop_stream()  
 
         # Clear video frame
         for widget in self.video_frame.winfo_children():
             widget.destroy()
 
-        # Make video_frame act like a grid container that resizes
         self.video_frame.columnconfigure(0, weight=1)
         self.video_frame.columnconfigure(1, weight=1)
         self.video_frame.rowconfigure(0, weight=1)
@@ -300,7 +293,7 @@ class CCTVApp:
             self.multi_labels[cam] = label
 
             col += 1
-            if col > 1:  # 2 cameras per row
+            if col > 1:  
                 col = 0
                 row += 1
 
@@ -324,7 +317,6 @@ class CCTVApp:
             self.video_label.imgtk = imgtk
             self.video_label.configure(image=imgtk)
 
-        # Schedule next frame & store ID so we can cancel later
         if self.running:
             self.after_id = self.video_label.after(1, self.update_frame)
 
@@ -361,12 +353,10 @@ class CCTVApp:
                 print(f"[WARNING] after_cancel error: {e}")
             self.after_id = None
 
-        # Release single view capture
         if hasattr(self, "cap") and self.cap and self.cap.isOpened():
             self.cap.release()
             self.cap = None
 
-        # ✅ Safely handle grid view resources
         if hasattr(self, "grid_caps"):
             for cap in self.grid_caps.values():
                 if cap and cap.isOpened():
@@ -382,14 +372,12 @@ class CCTVApp:
         if hasattr(self, "grid_frames"):
             self.grid_frames.clear()
 
-        # Destroy old widgets
         for widget in self.video_frame.winfo_children():
             try:
                 widget.destroy()
             except:
                 pass
 
-        # Recreate single video label
         self.video_label = tk.Label(self.video_frame, bg="#eeeeee")
         self.video_label.pack(fill="both", expand=True)
 
@@ -414,7 +402,7 @@ if __name__ == "__main__":
                 font=("Helvetica", 10, "bold"),
                 padding=6,
                 relief="solid",
-                background="#0078D7",         # strong blue
+                background="#0078D7",         
                 foreground="black",
                 borderwidth=2)
 
@@ -427,5 +415,6 @@ if __name__ == "__main__":
         background=[("active", "#005cb2")])
 
     app = CCTVApp(root)
-    root.protocol("WM_DELETE_WINDOW", app.on_closing)  # 🛑 safe app close
+    root.protocol("WM_DELETE_WINDOW", app.on_closing)  
+
     root.mainloop()
