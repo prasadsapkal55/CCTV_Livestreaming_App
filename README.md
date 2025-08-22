@@ -62,8 +62,8 @@ pip install opencv-python pillow
 
 1. Clone or download the script:
    ```bash
-   git clone https://your-repo-url
-   cd your-repo-directory
+   git clone https://github.com/prasadsapkal55/CCTV_Livestreaming_App.git
+   cd CCTV_Livestreaming_App
    ```
 
 2. Run the application:
