@@ -122,8 +122,3 @@ Camera credentials are saved in a local file: `camera_config.json`.
 - If the app doesn’t start, another instance might already be running
 
 ---
-
-## 🙋‍♂️ Author
-
-Created with 💻 by Prasad  
-Feel free to fork or contribute!
